@@ -9,4 +9,4 @@ WHERE { $s $p $o }
 LIMIT 500"
 
 results <- SPARQL(wdqs, query)
-resultMatrix <- as.matrix(results$results)
+results.df <- as.data.frame(results$results)
