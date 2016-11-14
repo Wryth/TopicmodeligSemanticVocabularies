@@ -1,7 +1,11 @@
 library(rJava)
 library(mallet)
 
-mallet.object <- mallet.import(results.df$s, results.df$p, "data/stoplist.csv", FALSE)
+mallet.object <- mallet.import(results.df$s, 
+                               paste(results.df$s, 
+                                     results.df$p,
+                                     results.df$o),
+                               "data/stoplist.csv", FALSE)
 
 topic.model <- MalletLDA(num.topics = 10)
 
@@ -18,7 +22,7 @@ head(word.freqs, 25)
 
 topic.model$setAlphaOptimization(20, 50)
 
-topic.model$train(800)
+topic.model$train(400)
 
 doc.topic.m <- mallet.doc.topics(topic.model,
                                  smoothed = TRUE,
@@ -27,3 +31,5 @@ doc.topic.m <- mallet.doc.topics(topic.model,
 topic.word.m <- mallet.topic.words(topic.model,
                                    smoothed = TRUE,
                                    normalized = TRUE)
+head(doc.topic.m, 25)
+
