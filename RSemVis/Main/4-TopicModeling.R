@@ -1,14 +1,13 @@
 library(rJava)
 library(mallet)
 
-mallet.object <- mallet.import(results.df$p, 
-                               results.df$p,
+mallet.object <- mallet.import(corpus$p, 
+                               corpus$id,
                                "data/stoplist.csv",
                                FALSE)
                                #,token.regexp = "")#Du må definere denne for å få tall med også
 
 topic.model <- MalletLDA(num.topics = 10)
-
 class(topic.model)
 
 topic.model$loadDocuments(mallet.object)
@@ -23,6 +22,8 @@ head(word.freqs, 25)
 topic.model$setAlphaOptimization(20, 50)
 
 topic.model$train(400)
+
+
 
 doc.topic.m <- mallet.doc.topics(topic.model,
                                  smoothed = TRUE,

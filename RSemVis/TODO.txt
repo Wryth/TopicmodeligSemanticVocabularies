@@ -1,0 +1,4 @@
+En trippel skal se slik ut.
+dbp:Alan_Turing rdf:type foaf:Person .
+
+Kutt ut paths etc.
