@@ -1,11 +1,11 @@
 library(rJava)
 library(mallet)
 
-mallet.object <- mallet.import(results.df$s, 
-                               paste(results.df$s, 
-                                     results.df$p,
-                                     results.df$o),
-                               "data/stoplist.csv", FALSE)
+mallet.object <- mallet.import(results.df$p, 
+                               results.df$p,
+                               "data/stoplist.csv",
+                               FALSE)
+                               #,token.regexp = "")#Du må definere denne for å få tall med også
 
 topic.model <- MalletLDA(num.topics = 10)
 
