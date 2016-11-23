@@ -1,8 +1,8 @@
 library(rJava)
 library(mallet)
 
-mallet.object <- mallet.import(corpus$p, 
-                               corpus$id,
+mallet.object <- mallet.import(corpus.df$p, 
+                               corpus.df$conc,
                                "data/stoplist.csv",
                                FALSE)
                                #,token.regexp = "")#Du må definere denne for å få tall med også

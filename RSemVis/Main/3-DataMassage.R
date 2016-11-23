@@ -1,10 +1,18 @@
 #Remove path of URLS.
 
-#corpus <- sapply(corpus, margin, FUN = gsub(".+#(.+)>","\\1"))
+#import sparql results----
+sparqlResults.df <- as.data.frame(sparqlResults$results)
+
+
+#NOT IN USE----
+#corpus <- lapply(corpus, margin, FUN = gsub(".+#(.+)>","\\1", corpus))
 #corpus <- gsub(".+#(.+)>", "\\1", corpus)
+#corpus <- do.call(gsub(".+#(.+)>",),)
 
 
-x <- "<http://www.openlinksw.com/virtrdf-data-formats#default-iid>"
+#Remove URL paths----
+corpus.m <- gsub(".+#(.+)>", "\\1", as.matrix(sparqlResults.df))
 
-ss <- gsub(".+#(.+)>", "\\1",x)
-ss
+#Convert to datafram, paste content of columns as id----
+corpus.df <- as.data.frame(corpus.m)
+corpus.df <- within(corpus.df, conc <- paste(s,p,o, sep = " "))
