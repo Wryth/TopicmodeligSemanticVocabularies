@@ -1,4 +1,5 @@
 library(ggplot2)
+library(igraph)
 
 
 doc.topic.df <- as.data.frame(doc.topic.m)

@@ -1,36 +1,45 @@
 library(rJava)
 library(mallet)
 
-mallet.object <- mallet.import(corpus.df$p, 
+#Create a object of the sparql results.
+mallet.object <- mallet.import(corpus.df$s, 
                                corpus.df$conc,
                                "data/stoplist.csv",
                                FALSE)
                                #,token.regexp = "")#Du må definere denne for å få tall med også
 
+#Create a topic model with X amount of topics.
 topic.model <- MalletLDA(num.topics = 10)
 class(topic.model)
 
+#Put the massaged sparqlresults in the topic model.
 topic.model$loadDocuments(mallet.object)
 
+#Create a vocabulary of all disctinct words. 
 vocabulary <- topic.model$getVocabulary()
 vocabulary[1:50]
 length(vocabulary)
 
+#Count how often each word occures.
 word.freqs <- mallet.word.freqs(topic.model)
 head(word.freqs, 25)
 
+#Specify Optimization parameters
 topic.model$setAlphaOptimization(20, 50)
 
+#Train the topic model.
 topic.model$train(400)
 
-
-
-doc.topic.m <- mallet.doc.topics(topic.model,
+#Document topic distribution.
+docTopic.m <- mallet.doc.topics(topic.model,
                                  smoothed = TRUE,
                                  normalized = TRUE)
 
-topic.word.m <- mallet.topic.words(topic.model,
+#The weigth each word has in each topic.
+topicWords.m <- mallet.topic.words(topic.model,
                                    smoothed = TRUE,
                                    normalized = TRUE)
-head(doc.topic.m, 25)
 
+#The highest valued words in a topic.
+docTopWord.df <- mallet.top.words(topic.model,topicWords.m[1,])
+docTopWord.df
