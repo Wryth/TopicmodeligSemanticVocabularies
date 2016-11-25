@@ -9,7 +9,7 @@ mallet.object <- mallet.import(corpus.df$s,
                                #,token.regexp = "")#Du må definere denne for å få tall med også
 
 #Create a topic model with X amount of topics.
-topic.model <- MalletLDA(num.topics = 10)
+topic.model <- MalletLDA(num.topics = 100)
 class(topic.model)
 
 #Put the massaged sparqlresults in the topic model.

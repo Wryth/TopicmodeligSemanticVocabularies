@@ -1,6 +1,12 @@
+d(s-p-o) All queries has to return tripples.
+
+
+
+
+
+----
 Mål SPARQL, finne mennesker og alle dies attributter.
 feks: alan Turing skal være et document.
-
 
 ----
 En trippel skal se slik ut.

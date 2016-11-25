@@ -11,7 +11,8 @@ sparqlResults.df <- as.data.frame(sparqlResults$results)
 
 
 #Remove URL paths----
-corpus.m <- gsub(".+#(.+)>", "\\1", as.matrix(sparqlResults.df))
+#corpus.m <- gsub(".+#(.+)>", "\\1", as.matrix(sparqlResults.df))
+corpus.m <- gsub("", "\\1", as.matrix(sparqlResults.df))
 
 #Convert to datafram, paste content of columns as id----
 corpus.df <- as.data.frame(corpus.m, stringsAsFactors = FALSE)

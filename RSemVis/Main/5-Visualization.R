@@ -2,10 +2,10 @@ library(ggplot2)
 library(igraph)
 
 
-doc.topic.df <- as.data.frame(doc.topic.m)
+docTopic.df <- as.data.frame(docTopic.m)
 
 
 #Document scores of topic V1
-ggplot(doc.topic.df, 
-       aes(y = V1, x = 1:length(doc.topic.df[,1]))) + 
+ggplot(docTopic.df, 
+       aes(y = V1, x = 1:length(docTopic.df[,1]))) + 
   geom_point()
