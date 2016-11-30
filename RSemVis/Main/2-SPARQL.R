@@ -36,6 +36,16 @@ WHERE {
 FILTER (langMatches(lang(?o),\"en\"))
 }LIMIT 100
 "
+#All triples of all connected with"NaturalPerson".
+query5 <- "SELECT DISTINCT ?s ?p ?o
+WHERE {
+?s ?p <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson>.
+?s dbo:abstract ?o .
+FILTER (langMatches(lang(?o),\"en\"))
+}LIMIT 1000
+"
+
+
 
 #Extract SPARQL results----
 sparqlResults <- SPARQL(dbqs, query5)

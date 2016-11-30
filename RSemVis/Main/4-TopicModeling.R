@@ -41,5 +41,14 @@ topicWords.m <- mallet.topic.words(topic.model,
                                    normalized = TRUE)
 
 #The highest valued words in a topic.
-docTopWord.df <- mallet.top.words(topic.model,topicWords.m[1,])
+docTopWord.df <- mallet.top.words(topic.model, topicWords.m[1,])
 docTopWord.df
+
+
+
+
+
+
+
+
+
