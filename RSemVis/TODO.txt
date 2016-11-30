@@ -1,3 +1,23 @@
+Scrape web: Ontology Type, and type description.
+DataMassage: Remove extra stuff if it exsits there.
+TopicModel: Train model where: Document ID= ontology Type link, Document is Description.
+Visualization: Show how certain documents scores well on their correlating topics.
+Stat: Show top scoring types on different Topics. And what words each topic represents.
+
+https://www.r-bloggers.com/rvest-easy-web-scraping-with-r/
+
+http://xmlns.com/foaf/spec/#term_Person
+https://www.wikidata.org/wiki/Q215627
+
+https://www.w3.org/wiki/Lists_of_ontologies
+
+
+
+
+
+Can i search for ontologies on the LOD with SPARQL? if not why cant i?
+Using MetaOntologies.
+----
 d(s-p-o) All queries has to return tripples.
 
 
