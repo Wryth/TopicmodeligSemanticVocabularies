@@ -28,25 +28,14 @@ dbr:Alan_Turing dbo:abstract ?o .
 FILTER (langMatches(lang(?o),\"en\"))
 } LIMIT 5"
 
-#abstract of all how are "NaturalPerson".
+#abstract of all how are "NaturalPerson".----
 query5 <- "SELECT DISTINCT ?s ?p ?o
 WHERE {
-?s ?p <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson>.
+?s ?p foaf:Person .
 ?s dbo:abstract ?o .
 FILTER (langMatches(lang(?o),\"en\"))
 }LIMIT 100
 "
-#All triples of all connected with"NaturalPerson".
-query5 <- "SELECT DISTINCT ?s ?p ?o
-WHERE {
-?s ?p <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson>.
-?s dbo:abstract ?o .
-FILTER (langMatches(lang(?o),\"en\"))
-}LIMIT 1000
-"
-
-
-
 #Extract SPARQL results----
 sparqlResults <- SPARQL(dbqs, query5)
 
@@ -56,3 +45,13 @@ sparqlResults <- SPARQL(dbqs, query5)
 #ns=c('rdf', '<http://www.w3.org/1999/02/22-rdf-syntax-ns#>',
 #'owl', 'http://www.w3.org/2002/07/owl#>',
 #'dbpediaProp' ,'<http://dbpedia.org/property/>')
+#'
+#All triples of all connected with"NaturalPerson".
+#query5 <- "SELECT DISTINCT ?s ?p ?o
+#WHERE {
+#?s ?p <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson>.
+#?s dbo:abstract ?o .
+#FILTER (langMatches(lang(?o),\"en\"))
+#}LIMIT 1000
+#"
+
