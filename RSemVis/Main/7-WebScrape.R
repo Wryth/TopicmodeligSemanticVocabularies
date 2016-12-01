@@ -1,7 +1,6 @@
 library(rvest)
 
 foafOntology <- read_html("http://xmlns.com/foaf/spec/")
-foafOntology
 
 foafText <- foafOntology %>%
   html_nodes(".specterm p") %>%

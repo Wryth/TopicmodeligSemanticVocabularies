@@ -1,9 +1,9 @@
 #
-max(docTopic.df)
+max(documentTopicScore.df)
 
 
 #Max score is: [document(row),topic(col)]
-positionMaxScore.m <- which(docTopic.df==max(docTopic.df[]), arr.ind=TRUE)
+positionMaxScore.m <- which(documentTopicScore.df==max(documentTopicScore.df), arr.ind=TRUE)
 positionMaxScore.m
 
 
@@ -16,5 +16,5 @@ corpus.df[positionMaxScore.m[1],3]
 
 
 #The highest valued words in a topic.
-docTopWord.df <- mallet.top.words(topic.model, topicWords.m[positionMaxScore.m[2],])
-docTopWord.df
+maxDocumentWordScore.df <- mallet.top.words(topic.model, topicWordScore.m[positionMaxScore.m[2],])
+maxDocumentWordScore.df

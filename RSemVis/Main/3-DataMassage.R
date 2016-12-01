@@ -1,47 +1,45 @@
 #Remove path of URLS.
 
-#import sparql results----
-#sparqlResults.df <- as.data.frame(sparqlResults$results)
+#import sparql results as dataframe----
+sparqlResults.df <- as.data.frame(sparqlResults.l$results)
+
 
 x <- paste(foafText, sep = "", collapse = "//")
-x <- apply(foafText,FUN = function(y){ if(y != "[#]  [back to top]") paste(foafText)})
-x
+x <- lapply(foafText, function(y){ if(y != "[#]  [back to top]") paste(foafText)})
+
+separate <- lapply(foafText,
+                   function(y,i = 0,n = 0){
+                     i = i + 1
+                     if(y == "[#]  [back to top]")
+                      paste(foafText[n:i])
+                       n = i})
 
 
+newList <- c()
+separate <- lapply(foafText,
+                   function(y,i = 0,n = 0){
+                     i = i + 1
+                     if(y == "[#]  [back to top]")
+                      newList[i] <- paste(foafText[n:i])
+                     n = i})
 
 
-
-conc <- 1
-i <- 1
-for (i in length(foafText)) {
-  if(foafText[i] == "[#]  [back to top]"){
-    conc[i] <- append(conc,paste(foafText[a:i]),after = length(conc))
-    a = i
-  }
-  i = i+1
+for (i in vector) {
+  
+  
 }
-conc
 
-f <- 1:5
-conc <- append(conc, 0:1, after = 3)
-f
-
-x <- paste(foafText[1:3], sep = "", collapse = "")
-x
+foafText[3]
 
 
-r <- lapply(x, append(x))
+
+#exists("[#]  [back to top]",)
+which()
 
 
-#which(foafText, )
 
 if(foafText[3] == "[#]  [back to top]") x = 3 
 
-
-foafCollaps <- 
-  paste()
-which()
-  
 #[#]  [back to top]
 
 #NOT IN USE----

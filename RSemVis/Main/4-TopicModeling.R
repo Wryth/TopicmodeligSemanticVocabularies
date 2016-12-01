@@ -30,19 +30,18 @@ topic.model$setAlphaOptimization(20, 50)
 #Train the topic model.
 topic.model$train(400)
 
-#Document topic distribution.
-docTopic.m <- mallet.doc.topics(topic.model,
+documentTopicScore.m <- mallet.doc.topics(topic.model,
                                  smoothed = TRUE,
                                  normalized = TRUE)
 
 #The weigth each word has in each topic.
-topicWords.m <- mallet.topic.words(topic.model,
+topicWordScore.m <- mallet.topic.words(topic.model,
                                    smoothed = TRUE,
                                    normalized = TRUE)
 
 #The highest valued words in a topic.
-docTopWord.df <- mallet.top.words(topic.model, topicWords.m[1,])
-docTopWord.df
+documentTopWords.df <- mallet.top.words(topic.model, topicWordScore.m[1,])
+documentTopWords.df
 
 
 
