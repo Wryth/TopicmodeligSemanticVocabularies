@@ -3,10 +3,13 @@ library(rvest)
 foafOntology <- read_html("http://xmlns.com/foaf/spec/")
 foafOntology
 
-lego_movie <- read_html("http://www.imdb.com/title/tt1490017/")
-
-
-foafOntology %>%
-  html_node("strong span") %>%
+foafText <- foafOntology %>%
+  html_nodes(".specterm p") %>%
   html_text() %>%
-  as.numeric()
+  as.character()
+length(foafText)
+
+foafTypes <- foafOntology %>%
+  html_nodes(".specterm h3") %>%
+  html_text()
+length(foafTypes)
