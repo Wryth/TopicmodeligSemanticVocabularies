@@ -1,4 +1,4 @@
-#Remove path of URLS.
+#Remove path of URIS.
 
 #import sparql results----
 sparqlResults.df <- as.data.frame(sparqlResults$results)
@@ -10,7 +10,7 @@ sparqlResults.df <- as.data.frame(sparqlResults$results)
 #corpus <- do.call(gsub(".+#(.+)>",),)
 
 
-#Remove URL paths----
+#Remove URI paths----
 #corpus.m <- gsub(".+#(.+)>", "\\1", as.matrix(sparqlResults.df))
 corpus.m <- gsub("", "\\1", as.matrix(sparqlResults.df))
 

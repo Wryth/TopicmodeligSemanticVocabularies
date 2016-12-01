@@ -34,8 +34,18 @@ WHERE {
 ?s ?p foaf:Person .
 ?s dbo:abstract ?o .
 FILTER (langMatches(lang(?o),\"en\"))
-}LIMIT 100
+}LIMIT 1000
 "
+query6 <- "SELECT DISTINCT ?s ?p ?o
+WHERE {
+?s ?p <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson> .
+?s dbo:abstract ?o .
+FILTER (langMatches(lang(?o),\"en\"))
+}LIMIT 1000
+"
+
+
+
 #Extract SPARQL results----
 sparqlResults <- SPARQL(dbqs, query5)
 

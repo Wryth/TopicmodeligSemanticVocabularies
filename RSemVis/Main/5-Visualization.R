@@ -7,6 +7,6 @@ topicWords.df <- as.data.frame(topicWords.m)
 
 #Document scores of topic V1
 ggplot(docTopic.df, 
-       aes(y = V63, x = 1:length(docTopic.df[,1]))) + 
+       aes(y = V92, x = 1:length(docTopic.df[,1]))) + 
   geom_point()
 
