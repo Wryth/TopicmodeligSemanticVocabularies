@@ -1,5 +1,6 @@
 Scrape web: Ontology Type, and type description.
 DataMassage: Remove extra stuff if it exsits there.
+  - Legg sammen foafTypeText og foafTypes. i en DF/M.
 TopicModel: Train model where: Document ID= ontology Type link, Document is Description.
 Visualization: Show how certain documents scores well on their correlating topics.
 Stat: Show top scoring types on different Topics. And what words each topic represents.

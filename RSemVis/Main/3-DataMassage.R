@@ -4,14 +4,14 @@
 sparqlResults.df <- as.data.frame(sparqlResults.l$results)
 
 
-x <- paste(foafText, sep = "", collapse = "//")
-x <- lapply(foafText, function(y){ if(y != "[#]  [back to top]") paste(foafText)})
+x <- lapply(foafText, function(y){ if(y == "[#]  [back to top]") paste(foafText[1:3], sep = "", collapse = " ")})
+length(x)
 
 separate <- lapply(foafText,
                    function(y,i = 0,n = 0){
                      i = i + 1
                      if(y == "[#]  [back to top]")
-                      paste(foafText[n:i])
+                      toString(foafText[n:i])
                        n = i})
 
 
@@ -24,23 +24,25 @@ separate <- lapply(foafText,
                      n = i})
 
 
-for (i in vector) {
-  
-  
+collapsByFoafType <- function(){
+  newText <- c()
+  n <- 1
+  for(i in 1:length(foafText)) {
+    if(foafText[i] == "[#]  [back to top]"){
+      derp <- paste(foafText[n:i-1], sep = "", collapse = " ")
+      newText <- c(newText, derp)
+      n <- i + 1
+    }
+  }
+  return(newText)
 }
-
-foafText[3]
-
-
-
-#exists("[#]  [back to top]",)
-which()
+foafTypeText <- collapsByFoafType()
+length(foafTypeText)
+foafTypeText[1]
 
 
-
-if(foafText[3] == "[#]  [back to top]") x = 3 
-
-#[#]  [back to top]
+d <- Filter((function(e) e == "[#]  [back to top]"), foafText)
+d[1:10]
 
 #NOT IN USE----
 #corpus <- lapply(corpus, margin, FUN = gsub(".+#(.+)>","\\1", corpus))
