@@ -1,5 +1,7 @@
-rm(list=ls(all=TRUE))
+#rm(list=ls(all=TRUE))
 library(SPARQL)
+#query descriptions and vocabulary types from linked open vocabularies SPARQL endpoint.
+
 
 #SPARQL endpoints----
 #wikidataURL <- "https://query.wikidata.org/bigdata/namespace/wdq/sparql"

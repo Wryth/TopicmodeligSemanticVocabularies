@@ -13,4 +13,4 @@ naturalLanguagelVocabularySearch <- function(searchEntry, corpus){
 
 corpus.df <- naturalLanguagelVocabularySearch("A person is a human, and can be regarded as a agent", corpus.df)
 
-rm(corpusVocNames.v, corpusVocText.v, corpus.m)
+rm(corpusVocNames.v, corpusVocText.v, corpus.m, webTypeDescription.v, webTypeNames.v)

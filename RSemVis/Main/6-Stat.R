@@ -1,5 +1,19 @@
+#Find which topic, searchEntry scores best at, present other types that score similar.
+
+
+#Find similar scoring vocabulary types.
+similarTypeDescriptions <- function(){
+  searchBestScore <- which(documentTopicScore.df==max(documentTopicScore.df[length(documentTopicScore.m[,1])]), arr.ind=TRUE)  
+}
+
+max(documentTopicScore.m[length(documentTopicScore.m[,1])])
+searchBestScore <- which(documentTopicScore.df==max(documentTopicScore.df[length(documentTopicScore.m[,1])]), arr.ind=TRUE)
+searchBestScore
+documentTopWords.df
+
+
 #
-max(documentTopicScore.df)
+max(documentTopicScore.m)
 
 
 #Max score is: [document(row),topic(col)]
