@@ -3,23 +3,15 @@ library(SPARQL)
 
 #SPARQL endpoints----
 #wikidataURL <- "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
-dbpediaURL <- "http://dbpedia.org/sparql"
+#dbpediaURL <- "http://dbpedia.org/sparql"
+lovURL <- "http://lov.okfn.org/dataset/lov/sparql"
 
-#All triples of all connected with foaf:Person.
-query <- "SELECT DISTINCT ?s ?p ?o
+query <- "SELECT DISTINCT *
   WHERE {
-    ?s ?p foaf:Person.
-    ?s dbo:abstract ?o .
-    FILTER (langMatches(lang(?o),\"en\"))
-  }LIMIT 1000"
+    ?s ?p ?o
+  }LIMIT 200"
 
 #Extract SPARQL results----
-sparqlResults.l <<- SPARQL(dbpediaURL, query)
+sparqlResults.l <- SPARQL(lovURL, query)
 
-
-#Not currently used----
-#ns=c('rdf', '<http://www.w3.org/1999/02/22-rdf-syntax-ns#>',
-#'owl', 'http://www.w3.org/2002/07/owl#>',
-#'dbpediaProp' ,'<http://dbpedia.org/property/>')
-
-rm(dbpediaURL, query)
+rm(lovURL, query)

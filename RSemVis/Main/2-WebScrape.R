@@ -1,4 +1,10 @@
+#Scrapes a given website discribing ontologie types for text.
+
 library(rvest)
+
+#import sparql results as dataframe----
+sparqlResults.df <- as.data.frame(sparqlResults.l$results)
+
 
 foafOntology.l <- read_html("http://xmlns.com/foaf/spec/")
 
