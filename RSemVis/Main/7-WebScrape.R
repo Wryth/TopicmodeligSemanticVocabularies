@@ -1,14 +1,16 @@
 library(rvest)
 
-foafOntology <- read_html("http://xmlns.com/foaf/spec/")
+foafOntology.l <- read_html("http://xmlns.com/foaf/spec/")
 
-foafText <- foafOntology %>%
+foafText.v <- foafOntology.l %>%
   html_nodes(".specterm p") %>%
   html_text() %>%
   as.character()
-length(foafText)
+length(foafText.v)
 
-foafTypes <- foafOntology %>%
+foafTypes.v <- foafOntology.l %>%
   html_nodes(".specterm h3") %>%
   html_text()
-length(foafTypes)
+length(foafTypes.v)
+
+rm(foafOntology.l)

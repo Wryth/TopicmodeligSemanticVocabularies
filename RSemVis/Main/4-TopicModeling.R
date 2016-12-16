@@ -2,8 +2,8 @@ library(rJava)
 library(mallet)
 
 #Create a object of the sparql results.
-mallet.object <- mallet.import(corpus.df$s, 
-                               corpus.df$conc,
+mallet.object <- mallet.import(corpus.df[,1], 
+                               corpus.df[,2],
                                "data/stoplist.csv",
                                FALSE)
                                #,token.regexp = "")#Du må definere denne for å få tall med også
