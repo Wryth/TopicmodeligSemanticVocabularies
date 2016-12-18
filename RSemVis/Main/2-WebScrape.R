@@ -2,10 +2,6 @@
 
 library(rvest)
 
-#import sparql results as dataframe----
-sparqlResults.df <- as.data.frame(sparqlResults.l$results)
-
-
 foafOntology.l <- read_html("http://xmlns.com/foaf/spec/")
 
 foafText.v <- foafOntology.l %>%

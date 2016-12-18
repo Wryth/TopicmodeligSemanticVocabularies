@@ -6,18 +6,23 @@ similarTypeDescriptions <- function(){
   searchBestScore <- which(documentTopicScore.df==max(documentTopicScore.df[length(documentTopicScore.m[,1])]), arr.ind=TRUE)  
 }
 
+
+
 max(documentTopicScore.m[length(documentTopicScore.m[,1])])
-searchBestScore <- which(documentTopicScore.df==max(documentTopicScore.df[length(documentTopicScore.m[,1])]), arr.ind=TRUE)
+searchBestScore <- which(documentTopicScore.m==max(documentTopicScore.m[length(documentTopicScore.m[,1])]), arr.ind=TRUE)
 searchBestScore
 documentTopWords.df
 
 
-#
+
+
+
+#----
 max(documentTopicScore.m)
 
 
 #Max score is: [document(row),topic(col)]
-positionMaxScore.m <- which(documentTopicScore.df==max(documentTopicScore.df), arr.ind=TRUE)
+positionMaxScore.m <- which(documentTopicScore.m==max(documentTopicScore.m), arr.ind=TRUE)
 positionMaxScore.m
 
 #Document 1169, topic 940
