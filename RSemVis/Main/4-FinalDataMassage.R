@@ -11,6 +11,6 @@ naturalLanguagelVocabularySearch <- function(searchEntry, corpus){
   rbind(corpus, entry)
 }
 
-corpus.df <- naturalLanguagelVocabularySearch("A person is a human, and can be regarded as a agent", corpus.df)
+corpus.df <- naturalLanguagelVocabularySearch("The Person class represents people, and can be regarded as a agent", corpus.df)
 
 rm(corpusVocNames.v, corpusVocText.v, corpus.m, webTypeDescription.v, webTypeNames.v)
