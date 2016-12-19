@@ -1,6 +1,5 @@
-#rm(list=ls(all=TRUE))
 library(SPARQL)
-#query descriptions and vocabulary types from linked open vocabularies SPARQL endpoint.
+#query descriptions and vocabulary terms from linked open vocabularies SPARQL endpoint.
 
 
 #SPARQL endpoints----

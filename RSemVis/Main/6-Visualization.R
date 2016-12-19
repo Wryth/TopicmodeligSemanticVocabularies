@@ -1,12 +1,11 @@
 library(ggplot2)
-library(igraph)
 
 documentTopicScore.df <- as.data.frame(documentTopicScore.m)
 topicWordScore.df <- as.data.frame(topicWordScore.m)
 
-
-#Document scores of topic V1
+#Plots the topic which our search entry scores best at.
+#Our description is the one farthest to the right.
 ggplot(documentTopicScore.df, 
-       aes(y = V39, x = 1:length(documentTopicScore.df[,1]))) + 
+       aes(y = documentTopicScore.df[,searchBestScore], x = 1:length(documentTopicScore.df[,1]))) + 
   geom_point()
 
