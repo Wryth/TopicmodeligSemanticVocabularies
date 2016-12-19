@@ -12,6 +12,7 @@ topTopicScore <- head(sort(documentTopicScore.m[,searchBestScore], decreasing = 
 topVocType <- which(documentTopicScore.m[,searchBestScore] %in% topTopicScore, arr.ind = TRUE)
 topVocType
 
+#Final results, Create a dataframe of the 10 closest scoring vocabulary terms.
 endResult.df <- corpus.df[topVocType,]
 View(endResult.df)
 

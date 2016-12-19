@@ -5,18 +5,11 @@ library(SPARQL)
 #SPARQL endpoints----
 lovURL <- "http://lov.okfn.org/dataset/lov/sparql"
 
-query <- "SELECT DISTINCT *
-  WHERE {
-    ?s ?p ?o
-  }LIMIT 200"
-
-query <- "PREFIX vann:<http://purl.org/vocab/vann/>
-PREFIX voaf:<http://purl.org/vocommons/voaf#>
-
-SELECT DISTINCT *
+query <- "PREFIX voaf:<http://purl.org/vocommons/voaf#>
+SELECT DISTINCT ?s ?o
 WHERE{
-  ?s a voaf:Vocabulary .
-    ?s ?p ?o
+?s a voaf:Vocabulary .
+?s <http://purl.org/dc/terms/description> ?o
 } limit 100"
 
 #Extract SPARQL results----
