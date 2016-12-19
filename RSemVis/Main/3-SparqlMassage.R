@@ -1,1 +1,1 @@
-#Modifies Sparquried Ontologie discription to a dataframe(name,discription)
+#Modifies Sparql Ontologie discription to a dataframe(name,discription)

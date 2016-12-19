@@ -1,4 +1,4 @@
-rm(list=ls(all=TRUE))
+#rm(list=ls(all=TRUE))
 source("Main/1-Functions.r")
 #source("Main/2-SPARQL.r")
 source("Main/2-WebScrape.r")
@@ -7,4 +7,4 @@ source("Main/4-FinalDataMassage.r")
 source("Main/5-TopicModeling.r")
 source("Main/6-TermCorrelation.r")
 
-source("Main/6-Visualization.r")
+
