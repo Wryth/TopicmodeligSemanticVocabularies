@@ -18,7 +18,8 @@ track the scripts one by one in ascending order:
 5-TopicModeling.r  
 6-TermCorrelation.r  
 6-Visualization.r  
-------------------------------------------------------------------------------
+
+
 If you want to change the search query yourself  
 -Open 4-FinalDataMassage.r  
 -Look for naturalLanguagelVocabularySearch("X",corpus.df)  
