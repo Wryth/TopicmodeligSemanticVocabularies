@@ -1,5 +1,9 @@
+## Description
+This project applies LDA topic modeling over SPARQL query results, in order to recognize if one dataset contains the same topics as another.
+More spesificly in this case we are look for topic simalerity between semantic vocabularies.
+
 ## Requirements
-Have lates version of R and Rstudio.  
+R version 3.3.2  
 Download the following packages: SPARQL, mallet, rjava, rvest, ggplot2  
 Can be installed in Rstudio  
 
@@ -27,3 +31,7 @@ If you want to change the search query yourself
 -Then run the whole program again.  
 -How ever the ontologies harvested will be the first 100 found on linken open vocabularies  
 and foaf terms in more details.  
+
+## Depricated
+The SPARQL endpoint originally used seems to have changed output : http://lov.okfn.org/dataset/lov/sparql
+I have yet to fix this, but inputs and configurations can be changed to suit other SPARQL endpoints.
